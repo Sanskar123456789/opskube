@@ -1,0 +1,28 @@
+{
+  "root": "apps/opskube-e2e",
+  "sourceRoot": "apps/opskube-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/opskube-e2e/cypress.json",
+        "devServerTarget": "opskube:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "opskube:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/opskube-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["opskube"]
+}

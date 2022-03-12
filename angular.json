@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "opskube": "apps/opskube",
+    "opskube-e2e": "apps/opskube-e2e"
+  }
+}
