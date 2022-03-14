@@ -1,0 +1,38 @@
+<p-card header="Login" *ngIf="!newUser">
+    
+    
+    <span class="p-float-label">
+        <input id="float-input" type="text" [(ngModel)]="userName" pInputText>
+        <label for="float-input">Username</label>
+    </span>
+    <br>
+    <br>
+    <p-button label="Submit" (onClick)="login()"></p-button>
+    <p-button label="New User" (onClick)="tonewUser()" ></p-button>
+</p-card>
+
+<p-card header="Login" *ngIf="newUser">
+    <div class="form" [formGroup]="forms">
+        <span class="p-float-label">
+            <input id="float-input" type="text" formControlName="Name" pInputText>
+            <label for="float-input">Username</label>
+        </span>
+        <br>
+        <br>
+        <span class="p-float-label">
+            <input id="float-input" type="text" formControlName="Phone_no" pInputText>
+            <label for="float-input">Phone Number</label>
+        </span>
+        <br>
+        <br>
+    
+        <span class="p-float-label">
+            <input id="float-input" type="text" formControlName="Address" pInputText>
+            <label for="float-input">Address</label>
+        </span>
+    </div>
+    <br>
+    <br>
+    <p-button label="Submit" (onClick)="submit()"></p-button>
+    <p-button label="Already a User" (onClick)="tonewUser()" ></p-button>
+</p-card>
